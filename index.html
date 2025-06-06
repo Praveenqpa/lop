@@ -1,24 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head><title>Chat</title></head>
+<head>
+  <title>Python Chat App</title>
+</head>
 <body>
   <ul id="messages"></ul>
   <input id="myMessage" autocomplete="off" /><button onclick="sendMessage()">Send</button>
-  <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
-  <script>
-    const socket = io();
 
-    socket.on('message', function(msg){
-        let li = document.createElement("li");
-        li.innerText = msg;
-        document.getElementById("messages").appendChild(li);
-    });
-
-    function sendMessage() {
-        let input = document.getElementById("myMessage");
-        socket.send(input.value);
-        input.value = '';
-    }
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+  <script src="/static/script.js"></script>
 </body>
 </html>
